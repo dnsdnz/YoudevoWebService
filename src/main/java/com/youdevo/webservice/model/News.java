@@ -10,7 +10,7 @@ import lombok.Data;
 @Entity
 public class News {
 
-    private @Id @GeneratedValue Long id;
+private @Id @GeneratedValue Long id;
 
   private String title;
   private String content;
@@ -18,7 +18,7 @@ public class News {
 
   News() {}
 
-  News(String title, String content, String category) {
+  public News(String title, String content, String category) {
     this.title = title;
     this.content = content;
     this.category = category;

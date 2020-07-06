@@ -4,6 +4,6 @@ import com.youdevo.webservice.model.News;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-interface EmployeeRepository extends JpaRepository<News, Long> {
+interface NewsRepository extends JpaRepository<News, Long> {
 
 }
