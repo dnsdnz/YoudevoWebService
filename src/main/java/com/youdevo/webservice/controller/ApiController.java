@@ -16,7 +16,7 @@ public class ApiController {
 
 	@GetMapping("/api")
 	public RestApi api(@RequestParam(value = "name", defaultValue = "World") String name) {
-		return new RestApi(counter.incrementAndGet(), String.format(template, name));
+		return new RestApi(counter.incrementAndGet(), String.format(template, name),"","");
 	}
 
     
