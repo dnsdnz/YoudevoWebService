@@ -2,6 +2,7 @@ package com.youdevo.webservice.controller;
 
 import java.util.concurrent.atomic.AtomicLong;
 
+import com.youdevo.webservice.exception.NewsNotFoundException;
 import com.youdevo.webservice.model.News;
 import com.youdevo.webservice.service.*;
 
@@ -27,41 +28,42 @@ public class NewsController {
 	}
   
   
-	@GetMapping("/News")
+	@GetMapping("/news")
 	List<News> all() {
 	  return repository.findAll();
 	}
   
-	@PostMapping("/News")
+	@PostMapping("/news")
 	News newNew(@RequestBody News newNew) {
 	  return repository.save(newNew);
 	}
   
 	// Single item
   
-	@GetMapping("/News/{id}")
+	@GetMapping("/news/{id}")
 	News one(@PathVariable Long id) {
   
 	  return repository.findById(id)
-		.orElseThrow(() -> new NewNotFoundException(id));
+		.orElseThrow(() -> new NewsNotFoundException(id));
 	}
   
-	@PutMapping("/News/{id}")
-	News replaceNew(@RequestBody News newNew, @PathVariable Long id) {
+	@PutMapping("/news/{id}")
+	News replaceData(@RequestBody News newData, @PathVariable Long id) {
   
 	  return repository.findById(id)
-		.map(New -> {
-		  New.setName(newNew.getName());
-		  New.setRole(newNew.getRole());
-		  return repository.save(New);
+		.map(data -> {
+		  data.setTitle(newData.getTitle());
+		  data.setContent(newData.getContent());
+		  data.setCategory(newData.getCategory());
+		  return repository.save(data);
 		})
 		.orElseGet(() -> {
-		  newNew.setId(id);
-		  return repository.save(newNew);
+		  newData.setId(id);
+		  return repository.save(newData);
 		});
 	}
   
-	@DeleteMapping("/News/{id}")
+	@DeleteMapping("/news/{id}")
 	void deleteNew(@PathVariable Long id) {
 	  repository.deleteById(id);
 	}

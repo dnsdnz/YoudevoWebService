@@ -1,7 +1,5 @@
 package com.youdevo.webservice.service;
 
-import java.io.Console;
-
 import com.youdevo.webservice.model.News;
 
 import org.springframework.boot.CommandLineRunner;
