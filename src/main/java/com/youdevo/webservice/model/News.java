@@ -23,4 +23,31 @@ private @Id @GeneratedValue Long id;
     this.content = content;
     this.category = category;
   }
+
+  public void setId(Long id) {
+    this.id = id;
+}
+
+  public String getTitle() {
+    return this.title;
+}
+
+public void setTitle(String title) {
+    this.title = title;
+}
+
+public String getContent() {
+    return this.content;
+}
+
+public void setContent(String content) {
+    this.content = content;
+}
+public String getCategory() {
+    return this.category;
+}
+
+public void setCategory(String category) {
+    this.category = category;
+}
 }

@@ -1,6 +1,6 @@
 package com.youdevo.webservice.controller;
 
-import java.util.concurrent.atomic.AtomicLong;
+
 
 import com.youdevo.webservice.exception.NewsNotFoundException;
 import com.youdevo.webservice.model.News;
@@ -9,7 +9,6 @@ import com.youdevo.webservice.service.*;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,7 +37,6 @@ public class NewsController {
 	  return repository.save(newNew);
 	}
   
-	// Single item
   
 	@GetMapping("/news/{id}")
 	News one(@PathVariable Long id) {
