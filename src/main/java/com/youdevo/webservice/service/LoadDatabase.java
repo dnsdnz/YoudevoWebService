@@ -16,8 +16,8 @@ public class LoadDatabase {
   CommandLineRunner initDatabase(NewsRepository repository) {
     return args -> {
     
-        System.out.println("Preloading " + repository.save(new News("Bilbo Baggins", "burglar","")));
-        System.out.println("Preloading " + repository.save(new News("Frodo Baggins", "thief","")));
+        System.out.println("Preloading " + repository.save(new News("New 1", "Content 1","Category 1")));
+        System.out.println("Preloading " + repository.save(new News("New 2", "Content 2","Category 2")));
     };
   }
 }
